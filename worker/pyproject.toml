@@ -1,0 +1,20 @@
+[project]
+name = "alfa-worker"
+version = "0.1.0"
+description = "Pulls folding jobs from an Alfa server and runs them on whatever GPU it finds itself on."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# ESMFold on a local GPU. Colab already has torch; this adds the model code.
+esmfold = ["transformers>=4.44", "accelerate"]
+
+[project.scripts]
+alfa-worker = "alfa_worker.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["alfa_worker*"]
