@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.data/
+.env*
+!.env.example
+next-env.d.ts
+__pycache__/
+*.egg-info/
+.venv/
+worker/out/
+tsconfig.tsbuildinfo
+
+# OpenTofu: providers, state (contains secrets), and local variable values.
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/terraform.tfvars
